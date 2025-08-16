@@ -1,0 +1,83 @@
+/* Global Font Configuration for Vietnamese Text */
+/* Đảm bảo tất cả text tiếng Việt hiển thị đúng */
+
+/* Universal font application */
+
+
+/* HTML and Body elements */
+html, body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+/* All text elements */
+p, span, div, h1, h2, h3, h4, h5, h6, a, li, ul, ol, table, th, td, caption {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+/* Form elements */
+input, textarea, select, button, label, fieldset, legend {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+/* Bootstrap components */
+.btn, .form-control, .form-label, .form-text, .form-select, .input-group-text,
+.alert, .alert-heading, .alert-link,
+.card, .card-title, .card-text, .card-header, .card-footer,
+.navbar, .navbar-brand, .nav-link, .nav-item, .nav-tabs, .nav-pills,
+.dropdown, .dropdown-item, .dropdown-header, .dropdown-menu,
+.breadcrumb, .breadcrumb-item,
+.pagination, .page-link, .page-item,
+.badge, .badge-pill,
+.modal, .modal-title, .modal-body, .modal-header, .modal-footer,
+.tooltip, .tooltip-inner,
+.popover, .popover-title, .popover-content,
+.list-group, .list-group-item,
+.table, .table th, .table td,
+.progress, .progress-bar {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+/* Custom components */
+.navbar, .navbar * {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+.site-footer, .site-footer * {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+.chatbot-container, .chatbot-container * {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+/* User and Admin specific */
+.user-dashboard, .user-dashboard * {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+.admin-panel, .admin-panel * {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+/* Override any conflicting font declarations */
+[style*="font-family"] {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+/* Ensure proper line height for Vietnamese text */
+body, p, div, span, h1, h2, h3, h4, h5, h6 {
+    line-height: 1.6;
+}
+
+/* Ensure proper text rendering */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* KHÔNG ép font-family cho các icon Font Awesome - selector mạnh hơn */
+html body .fa, html body .fas, html body .far, html body .fab, html body .fal, html body .fa-solid, html body .fa-regular, html body .fa-light, html body .fa-brands, html body .fa-duotone, html body .fa-thin, html body .fa-fw, html body [class^="fa-"], html body [class*=" fa-"] {
+    font-family: 'Font Awesome 6 Free', 'Font Awesome 5 Free', 'FontAwesome', 'Font Awesome 6 Brands', 'Font Awesome 5 Brands', 'Font Awesome 4.7.0', sans-serif !important;
+    font-weight: 900 !important;
+} 

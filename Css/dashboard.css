@@ -1,0 +1,402 @@
+/* ===== DASHBOARD ADMIN STYLES ===== */
+
+/* Import Chart.js styles */
+@import url('https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.min.css');
+
+/* ===== STATISTICS CARDS ===== */
+.stats-card {
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    overflow: hidden;
+}
+
+.stats-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.stats-icon {
+    font-size: 2.5rem;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.stats-card:hover .stats-icon {
+    opacity: 1;
+}
+
+.stats-number {
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.stats-label {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    font-weight: 500;
+}
+
+/* ===== CHART CONTAINERS ===== */
+.chart-container {
+    position: relative;
+    height: 300px;
+    margin: 20px 0;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.chart-container canvas {
+    border-radius: 12px;
+}
+
+/* ===== RECENT ITEMS ===== */
+.recent-item {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border-radius: 8px;
+    margin-bottom: 5px;
+}
+
+.recent-item:hover {
+    background-color: #f8f9fa;
+    transform: translateX(5px);
+}
+
+.recent-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+/* ===== STATUS BADGES ===== */
+.status-badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.status-pending { 
+    background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+    color: #856404;
+    border: 1px solid #ffeaa7;
+}
+
+.status-processing { 
+    background: linear-gradient(135deg, #d1ecf1 0%, #74b9ff 100%);
+    color: #0c5460;
+    border: 1px solid #74b9ff;
+}
+
+.status-shipping { 
+    background: linear-gradient(135deg, #d4edda 0%, #55a3ff 100%);
+    color: #155724;
+    border: 1px solid #55a3ff;
+}
+
+.status-completed { 
+    background: linear-gradient(135deg, #c3e6cb 0%, #00b894 100%);
+    color: #155724;
+    border: 1px solid #00b894;
+}
+
+.status-cancelled { 
+    background: linear-gradient(135deg, #f5c6cb 0%, #e17055 100%);
+    color: #721c24;
+    border: 1px solid #e17055;
+}
+
+/* ===== QUICK ACTIONS ===== */
+.quick-actions {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.quick-actions::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.quick-action-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    border-radius: 12px;
+    padding: 18px;
+    text-decoration: none;
+    display: block;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1;
+}
+
+.quick-action-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+    text-decoration: none;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.quick-action-btn i {
+    transition: transform 0.3s ease;
+}
+
+.quick-action-btn:hover i {
+    transform: scale(1.1);
+}
+
+/* ===== DASHBOARD HEADER ===== */
+.dashboard-header {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.dashboard-header h2 {
+    color: #495057;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.dashboard-header p {
+    color: #6c757d;
+    margin-bottom: 0;
+}
+
+.dashboard-header small {
+    color: #adb5bd;
+    font-weight: 500;
+}
+
+/* ===== CARD ENHANCEMENTS ===== */
+.card {
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border: none;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.card-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.card-header h5 {
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-header i {
+    font-size: 1.2rem;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1200px) {
+    .stats-number {
+        font-size: 1.8rem;
+    }
+    
+    .stats-icon {
+        font-size: 2.2rem;
+    }
+    
+    .chart-container {
+        height: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .stats-card {
+        margin-bottom: 20px;
+    }
+    
+    .stats-number {
+        font-size: 1.6rem;
+    }
+    
+    .stats-icon {
+        font-size: 2rem;
+    }
+    
+    .chart-container {
+        height: 200px;
+    }
+    
+    .quick-actions {
+        margin-top: 20px;
+    }
+    
+    .recent-item {
+        padding: 12px;
+    }
+    
+    .dashboard-header {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .stats-card .card-body {
+        padding: 15px;
+    }
+    
+    .stats-number {
+        font-size: 1.4rem;
+    }
+    
+    .stats-icon {
+        font-size: 1.8rem;
+    }
+    
+    .chart-container {
+        height: 180px;
+    }
+    
+    .quick-action-btn {
+        padding: 15px;
+        margin-bottom: 10px;
+    }
+    
+    .card-header {
+        padding: 12px 15px;
+        font-size: 1rem;
+    }
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stats-card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.stats-card:nth-child(1) { animation-delay: 0.1s; }
+.stats-card:nth-child(2) { animation-delay: 0.2s; }
+.stats-card:nth-child(3) { animation-delay: 0.3s; }
+.stats-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* ===== LOADING STATES ===== */
+.loading-skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* ===== CHART CUSTOMIZATION ===== */
+.chart-container canvas {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+/* ===== UTILITY CLASSES ===== */
+.text-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.shadow-soft {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.shadow-medium {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.shadow-strong {
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== HOVER EFFECTS ===== */
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.hover-scale {
+    transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.02);
+}
+
+/* ===== FOCUS STATES ===== */
+.quick-action-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+    .quick-actions,
+    .btn,
+    .navbar {
+        display: none !important;
+    }
+    
+    .card {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+    
+    .stats-card {
+        break-inside: avoid;
+    }
+} 

@@ -1,0 +1,201 @@
+/* ====== Admin Panel Styles ====== */
+body, body * {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+.navbar {
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%) !important;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 4px 24px rgba(102, 126, 234, 0.08);
+}
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.7rem;
+    letter-spacing: 1px;
+}
+.nav-link {
+    font-weight: 500;
+    color: #fff !important;
+    padding: 0.7rem 1.2rem !important;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+}
+.nav-link.active, .nav-link:focus, .nav-link:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%) !important;
+    color: #fff !important;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.10);
+}
+.navbar-toggler {
+    border: none;
+}
+.navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* ====== Card ====== */
+.card {
+    border-radius: 14px;
+    box-shadow: 0 2px 16px rgba(102, 126, 234, 0.08);
+    border: none;
+    margin-bottom: 24px;
+}
+.card-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 14px 14px 0 0 !important;
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
+
+/* ====== Table ====== */
+.table {
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+}
+.table th {
+    background: #f3f4fa;
+    font-weight: 600;
+    border-top: none;
+    color: #4b4b4b;
+}
+.table tr:hover {
+    background: #f8f9fa;
+    transition: background 0.2s;
+}
+
+/* ====== Button ====== */
+.btn {
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.2s;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.08);
+}
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+}
+.btn-primary:hover, .btn-primary:focus {
+    background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+    transform: translateY(-2px) scale(1.03);
+}
+.btn-success {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    border: none;
+}
+.btn-success:hover, .btn-success:focus {
+    background: linear-gradient(135deg, #0e8679 0%, #32d96b 100%);
+    transform: translateY(-2px) scale(1.03);
+}
+.btn-danger {
+    background: linear-gradient(135deg, #ff5858 0%, #f093fb 100%);
+    border: none;
+}
+.btn-danger:hover, .btn-danger:focus {
+    background: linear-gradient(135deg, #ff4545 0%, #ee80e8 100%);
+    transform: translateY(-2px) scale(1.03);
+}
+
+/* ====== Form ====== */
+.form-control, .form-select {
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.form-control:focus, .form-select:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 0.15rem rgba(102, 126, 234, 0.18);
+}
+.form-label {
+    font-weight: 500;
+    color: #4b4b4b;
+}
+
+/* ====== Avatar & Image Preview ====== */
+.avatar-preview, .image-preview {
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* ====== Table nâng cao ====== */
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #f8f9fa;
+}
+.table-hover > tbody > tr:hover {
+    background-color: #e9ecef;
+    transition: background 0.2s;
+}
+.table th, .table td {
+    vertical-align: middle !important;
+}
+
+/* ====== Badge trạng thái ====== */
+.badge.bg-success {
+    background: linear-gradient(135deg, #38ef7d 0%, #11998e 100%) !important;
+    color: #fff !important;
+}
+.badge.bg-secondary {
+    background: linear-gradient(135deg, #bdc3c7 0%, #2c3e50 100%) !important;
+    color: #fff !important;
+}
+.badge.bg-warning {
+    background: linear-gradient(135deg, #f7971e 0%, #ffd200 100%) !important;
+    color: #fff !important;
+}
+
+/* ====== Pagination (nút chuyển trang) ====== */
+.pagination .page-link {
+    border-radius: 6px !important;
+    margin: 0 2px;
+    color: #667eea;
+    border: 1px solid #e0e0e0;
+    transition: background 0.2s, color 0.2s;
+}
+.pagination .page-link.active, .pagination .page-link:focus, .pagination .page-link:hover {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: #fff !important;
+    border: none;
+}
+
+/* ====== Hiệu ứng cho nút hành động nhỏ (btn-sm) ====== */
+.btn-sm {
+    padding: 0.25rem 0.7rem;
+    font-size: 0.95rem;
+}
+.btn-outline-primary, .btn-outline-success, .btn-outline-danger, .btn-outline-secondary {
+    border-width: 2px;
+    font-weight: 500;
+}
+
+/* ====== Hiệu ứng cho input-group, filter, search ====== */
+.input-group .form-control:focus {
+    z-index: 2;
+    border-color: #667eea;
+    box-shadow: 0 0 0 0.15rem rgba(102, 126, 234, 0.18);
+}
+.input-group .btn {
+    border-radius: 0 6px 6px 0 !important;
+}
+
+/* ====== Responsive cho GridView và form ====== */
+@media (max-width: 992px) {
+    .table-responsive {
+        font-size: 0.97rem;
+    }
+    .card {
+        margin-bottom: 16px;
+    }
+    .btn, .btn-sm {
+        font-size: 0.97rem;
+    }
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+}

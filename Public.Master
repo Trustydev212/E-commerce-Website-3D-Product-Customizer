@@ -1,0 +1,179 @@
+﻿<%@ Master Language="C#" CodeFile="Public.Master.cs" Inherits="Public" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D T-Shirt Design Platform</title>
+    <link rel="icon" type="image/x-icon" href="Images/Logo/favicon.ico" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <link href="~/Css/global-fonts.css" rel="stylesheet" type="text/css" />
+    <link href="~/Css/site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Css/products.css" rel="stylesheet" type="text/css" />
+    <style>
+        body, body * { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important; 
+        }
+        .navbar, .navbar * { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important; 
+        }
+        .site-footer, .site-footer * { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important; 
+        }
+        
+        /* Logo Styling */
+        .navbar-brand img {
+            height: 40px;
+            width: auto;
+            max-width: 180px;
+        }
+        
+        .footer-logo img {
+            height: 35px;
+            width: auto;
+            max-width: 150px;
+        }
+    </style>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server" EnableScriptLocalization="true" />
+        
+        <!-- Hidden field để lưu userId cho JavaScript -->
+        <asp:HiddenField ID="hdnUserId" runat="server" />
+        
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light custom-header-navbar">
+            <div class="header-container">
+                <a class="navbar-brand fw-bold" href="<%= ResolveUrl("~/Pages/Default.aspx") %>">
+                    <img src="/Images/Logo/logo.png" alt="3D T-Shirt Logo" class="d-inline-block align-text-top" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="<%= ResolveUrl("~/Pages/Default.aspx") %>">Trang chủ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<%= ResolveUrl("~/Pages/Products.aspx") %>">Sản phẩm</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<%= ResolveUrl("~/Pages/Blog.aspx") %>">Blog</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item" runat="server" id="liCart" visible="false">
+                            <a class="nav-link" href="<%= ResolveUrl("~/Pages/Cart.aspx") %>">
+                                <i class="fas fa-shopping-cart me-1"></i>Giỏ hàng
+                                <span class="badge bg-warning text-dark ms-1" id="cartCount" runat="server">0</span>
+                            </a>
+                        </li>
+                        <li class="nav-item" runat="server" id="liProfile" visible="false">
+                            <a class="nav-link" href="<%= ResolveUrl("~/Pages/UserProfile.aspx") %>">
+                                <i class="fas fa-user me-1"></i>Hồ sơ
+                            </a>
+                        </li>
+                        <li class="nav-item" runat="server" id="liLogin" visible="true">
+                            <a class="nav-link" href="<%= ResolveUrl("~/Pages/Login.aspx") %>">
+                                <i class="fas fa-sign-in-alt me-1"></i>Đăng nhập
+                            </a>
+                        </li>
+                        <li class="nav-item" runat="server" id="liRegister" visible="true">
+                            <a class="nav-link" href="<%= ResolveUrl("~/Pages/Register.aspx") %>">
+                                <i class="fas fa-user-plus me-1"></i>Đăng ký
+                            </a>
+                        </li>
+                        <li class="nav-item" runat="server" id="liLogout" visible="false">
+                            <asp:LinkButton ID="btnLogout" runat="server" CssClass="nav-link" OnClick="btnLogout_Click">
+                                <i class="fas fa-sign-out-alt me-1"></i>Đăng xuất
+                            </asp:LinkButton>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Main Content -->
+        <main>
+            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="bg-dark text-light py-5 mt-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="footer-logo mb-3">
+                            <img src="/Images/Logo/logo-footer.png" alt="3D T-Shirt Logo" />
+                        </div>
+                        <p>Nền tảng thiết kế áo thun 3D tùy chỉnh hàng đầu Việt Nam</p>
+                    </div>
+                    <div class="col-md-2 mb-4">
+                        <h6>Sản phẩm</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="<%= ResolveUrl("~/Pages/Products.aspx") %>" class="text-light text-decoration-none">Áo thun</a></li>
+                            <li><a href="<%= ResolveUrl("~/Pages/Products.aspx") %>?type=hoodie" class="text-light text-decoration-none">Hoodie</a></li>
+                            <li><a href="<%= ResolveUrl("~/Pages/Products.aspx") %>?type=polo" class="text-light text-decoration-none">Polo</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 mb-4">
+                        <h6>Hỗ trợ</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="<%= ResolveUrl("~/Pages/Contact.aspx") %>" class="text-light text-decoration-none">Liên hệ</a></li>
+                            <li><a href="<%= ResolveUrl("~/Pages/Guide.aspx") %>" class="text-light text-decoration-none">Hướng dẫn</a></li>
+                            <li><a href="<%= ResolveUrl("~/Pages/FAQ.aspx") %>" class="text-light text-decoration-none">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <h6>Theo dõi chúng tôi</h6>
+                        <div class="social-links">
+                            <a href="https://facebook.com/" class="text-light me-3" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://instagram.com/" class="text-light me-3" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://youtube.com/" class="text-light me-3" target="_blank"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <hr class="my-4" />
+                <div class="text-center">
+                    <p>&copy; 2024 3D T-Shirt. Tất cả quyền được bảo lưu.</p>
+                </div>
+            </div>
+        </footer>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src='<%: ResolveUrl("~/JS/site.js") %>'></script>
+        <script src='<%: ResolveUrl("~/JS/notifications.js") %>'></script>
+        
+        <script>
+        // Function to update cart count globally
+        function updateCartCount() {
+            var userId = document.getElementById('<%= hdnUserId.ClientID %>').value;
+            if (userId) {
+                $.ajax({
+                    url: '<%= ResolveUrl("~/Pages/GetCartCount.aspx") %>',
+                    type: 'POST',
+                    data: { userId: userId },
+                    success: function(response) {
+                        if (response.success) {
+                            $('#cartCount').text(response.count);
+                            console.log('Cart count updated:', response.count);
+                        }
+                    },
+                    error: function() {
+                        console.log('Failed to update cart count');
+                    }
+                });
+            }
+        }
+        </script>
+    </form>
+</body>
+</html>
